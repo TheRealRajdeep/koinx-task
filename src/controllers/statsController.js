@@ -37,7 +37,7 @@ export const getCoinDeviation = async (req, res) => {
     const records = await coinModel
       .find({ Name: coinName })
       .sort({ createdAt: -1 })
-      .limit(30);
+      .limit(100);
     console.log(records);
     if (!records.length) {
       return res.status(404).json({ error: "No records found" });
